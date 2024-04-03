@@ -1,7 +1,7 @@
 const sendResponse = require("../utils/response/send_response");
 const ClientError = require("../utils/exceptions/client_error");
 const ServerError = require("../utils/exceptions/server_error");
-const userService = require("../services/user_service");
+const userService = require("../services/auth_service");
 const logger = require("../utils/exceptions/logger");
 const {
   validateRegister,

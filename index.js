@@ -9,7 +9,7 @@ const morgan = require("morgan");
 const moment = require("moment");
 const errorHandler = require("./utils/exceptions/error_handler");
 const userRouter = require("./routes/auth_routes");
-
+const blogRouter = require("./routes/blog_routes");
 require("./database/connection");
 
 
@@ -36,6 +36,7 @@ app.use("/healthcheck", (req, res, next) => {
   });
   
 app.use("/api/user/auth", userRouter);
+app.use("/api/blog", blogRouter);
 
 app.use(errorHandler);
 app.use((err, req, res, next) => {
