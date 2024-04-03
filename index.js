@@ -10,6 +10,7 @@ const moment = require("moment");
 const errorHandler = require("./utils/exceptions/error_handler");
 const userRouter = require("./routes/auth_routes");
 const blogRouter = require("./routes/blog_routes");
+const commentRouter = require("./routes/comment_routes");
 require("./database/connection");
 
 
@@ -37,6 +38,7 @@ app.use("/healthcheck", (req, res, next) => {
   
 app.use("/api/user/auth", userRouter);
 app.use("/api/blog", blogRouter);
+app.use("/api/blog/comment", commentRouter)
 
 app.use(errorHandler);
 app.use((err, req, res, next) => {
